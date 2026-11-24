@@ -1,0 +1,10 @@
+body{margin:0;background:#f4efec;font-family:system-ui,"Segoe UI",Tahoma,sans-serif;color:#1d1b1a;line-height:1.7}
+main{max-width:860px;margin:0 auto;padding:20px}.logo{text-align:center}.logo img{width:170px;max-width:60%}
+h1{text-align:center;margin:8px 0}.mut{color:#6b625d;text-align:center;margin:0 0 16px}.small{font-size:12px}
+.note{background:#fff;border:1px solid #e2d9d3;border-radius:12px;padding:14px;margin:16px 0}
+.cats{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.cats button{min-height:44px;padding:0 16px;border-radius:22px;border:1px solid #cbbfb7;background:#fff;font:inherit;cursor:pointer}.cats button.on{background:#1d1b1a;color:#fff}
+.grid{display:grid;grid-template-columns:1fr;gap:20px}@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:#fff;border-radius:16px;padding:14px;border:1px solid #e2d9d3;min-width:0}.card img.main{width:100%;height:240px;object-fit:contain;border-radius:10px;background:#faf7f5}
+.thumbs{display:flex;gap:8px;overflow-x:auto;margin-top:8px}.thumbs img{height:70px;border-radius:8px;cursor:pointer}
+.card h3{margin:10px 0 4px}.price{font-weight:700}.card p{margin:6px 0}
+a.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:22px;background:#1f8f4e;color:#fff;text-decoration:none;font-weight:600}

@@ -1,0 +1,22 @@
+media:
+  input: photos
+  output: /photos
+content:
+  - name: products
+    label: المنتجات (Products)
+    type: file
+    path: products.json
+    format: json
+    fields:
+      - name: products
+        label: Products
+        type: object
+        list: true
+        fields:
+          - { name: id, label: "Short id (English letters, no spaces, unique)", type: string }
+          - { name: category, label: "Category (e.g. لعب أطفال or عجل)", type: string }
+          - { name: title, label: "Name", type: string }
+          - { name: detail, label: "Description", type: text }
+          - { name: price, label: "Price (EGP, numbers only)", type: number }
+          - { name: photo, label: "Main photo", type: image }
+          - { name: gallery, label: "More photos", type: image, list: true }
