@@ -169,17 +169,16 @@ main{max-width:920px;margin:0 auto;padding:22px 18px 30px}
 }
 .map-btn:hover{transform:translateY(-2px);box-shadow:0 12px 22px rgba(62,142,247,.4)}
 .map-btn svg{width:20px;height:20px;flex:0 0 auto}
-.phones{display:flex;flex-direction:column;gap:8px}
-.phone{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  min-height:44px;padding:0 14px;border-radius:999px;
-  border:2px solid var(--ring);background:#fffdf8;
-  color:var(--ink);text-decoration:none;font-weight:800;font-size:16px;
-  direction:ltr;letter-spacing:.5px;
-  transition:border-color .15s ease, color .15s ease, transform .15s ease;
-}
-.phone:hover{border-color:var(--coral);color:var(--coral);transform:translateY(-1px)}
-.phone svg{width:18px;height:18px;flex:0 0 auto;color:var(--wa)}
+.phones{display:flex;flex-direction:column;gap:9px}
+.contact-number{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 8px;border-radius:14px;background:#fffdf8;border:1px solid var(--ring)}
+.number{direction:ltr;letter-spacing:.35px;font-weight:800;font-size:15px;white-space:nowrap}
+.contact-actions{display:flex;align-items:center;gap:6px;flex:0 0 auto}
+.action-button{display:inline-flex;align-items:center;justify-content:center;gap:4px;min-height:38px;padding:0 10px;border-radius:999px;text-decoration:none;font-weight:800;font-size:13px;white-space:nowrap;transition:transform .15s ease,filter .15s ease}
+.action-button:hover{transform:translateY(-1px);filter:brightness(.96)}
+.action-button svg{width:16px;height:16px;flex:0 0 auto}
+.call-action{color:var(--ink);background:#f3ecde;border:1px solid var(--ring)}
+.wa-action{color:#fff;background:var(--wa);border:1px solid var(--wa)}
+@media(max-width:360px){.contact-number{flex-wrap:wrap;justify-content:center}.contact-actions{width:100%;justify-content:center}}
 
 /* ---------- Footer ---------- */
 .mut{color:var(--muted);text-align:center;margin:26px 0 8px}
