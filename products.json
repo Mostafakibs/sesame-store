@@ -1,8 +1,39 @@
 {
-  "shop": {"name": "عالم سمسم", "tagline": "لعب أطفال وعجل", "whatsapp": "201151400305"},
   "products": [
-    {"id": "rattles", "category": "لعب أطفال", "title": "طقم شخاشيخ ملون", "detail": "اسأل المحل على واتساب عن التفاصيل والتوفر قبل تأكيد الطلب.", "price": 150, "photo": "/photos/rattles.jpg", "gallery": []},
-    {"id": "duck", "category": "لعب أطفال", "title": "لعبة البطة", "detail": "اسأل المحل على واتساب عن التفاصيل والتوفر قبل تأكيد الطلب.", "price": 150, "photo": "/photos/duck.jpg", "gallery": []},
-    {"id": "bike", "category": "عجل", "title": "عجله مرشيل", "detail": "مقاس 26، غيارات. اسأل المحل عن عدد الغيارات وباقي المواصفات والتوفر قبل تأكيد الطلب.", "price": 5600, "photo": "/photos/bike-lead.jpg", "gallery": ["/photos/bike-rear.jpg", "/photos/bike-basket.jpg", "/photos/bike-seat.jpg"]}
+    {
+      "id": "rattles",
+      "category": "لعب أطفال",
+      "title": "طقم شخاشيخ ملون",
+      "detail": "اسأل المحل على واتساب عن التفاصيل والتوفر قبل تأكيد الطلب.",
+      "price": 151,
+      "photo": "/photos/rattles.jpg"
+    },
+    {
+      "id": "duck",
+      "category": "لعب أطفال",
+      "title": "لعبة البطة",
+      "detail": "اسأل المحل على واتساب عن التفاصيل والتوفر قبل تأكيد الطلب.",
+      "price": 150,
+      "photo": "/photos/duck.jpg"
+    },
+    {
+      "id": "bike",
+      "category": "عجل",
+      "title": "عجله مرشيل",
+      "detail": "مقاس 26، غيارات. اسأل المحل عن عدد الغيارات وباقي المواصفات والتوفر قبل تأكيد الطلب.",
+      "price": 5600,
+      "photo": "/photos/bike-lead.jpg",
+      "gallery": [
+        "/photos/bike-rear.jpg",
+        "/photos/bike-basket.jpg",
+        "/photos/bike-seat.jpg"
+      ]
+    },
+    {
+      "id": "testitem",
+      "category": "لعب أطفال",
+      "title": "منتج تجربة",
+      "price": 99
+    }
   ]
 }
