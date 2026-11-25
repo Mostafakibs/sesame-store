@@ -15,7 +15,7 @@ fetch('products.json').then(r=>r.json()).then(d=>{
   const tracked=p=>p.stock!==undefined&&p.stock!==null&&p.stock!=='';
   const soldOut=p=>tracked(p)&&Number(p.stock)<=0;
   const st=document.createElement('style');
-  st.textContent='.stk{display:inline-block;padding:2px 10px;border-radius:999px;font-weight:700;font-size:13px}.stk.in{background:#e6f7ec;color:#157a3c}.stk.out{background:#fde8e8;color:#b42318}.card:has(.stk){position:relative}.card:has(.stk) .stk{position:absolute;top:26px;right:26px;z-index:3}.card:has(.stk) .cat-chip{left:26px;right:auto;z-index:2}.stk.out{font-size:0}.stk.out:after{content:"غير متوفر";font-size:13px}.btn-off{background:#d0d0d0!important;color:#666!important;cursor:not-allowed;pointer-events:none;text-align:center}.card:has(.stk.out) .ph img{opacity:.55}';
+  st.textContent='.stk{display:inline-block;padding:2px 10px;border-radius:999px;font-weight:700;font-size:13px}.stk.in{background:#e6f7ec;color:#157a3c}.stk.out{background:#fde8e8;color:#b42318}.ph .stk{position:absolute;top:10px;right:10px;z-index:3}.ph .cat-chip{left:10px;right:auto;z-index:2}.stk.out{font-size:0}.stk.out:after{content:"غير متوفر";font-size:13px}.btn-off{background:#d0d0d0!important;color:#666!important;cursor:not-allowed;pointer-events:none;text-align:center}.card:has(.stk.out) .ph img{opacity:.55}';
   document.head.appendChild(st);
   function draw(){
     cEl.innerHTML='';
@@ -29,9 +29,9 @@ fetch('products.json').then(r=>r.json()).then(d=>{
     lEl.innerHTML=ps.filter(p=>cur==='الكل'||p.category===cur).map(p=>{
       const g=(p.gallery||[]).map(u=>'<img src="'+esc(rel(u))+'" alt="" loading="lazy" onclick="this.closest(\'.card\').querySelector(\'.main\').src=this.src">').join('');
       return '<article class="card">'
-        +(p.photo?'<div class="ph"><img class="main" src="'+esc(rel(p.photo))+'" alt="'+esc(p.title)+'">'+(p.category?'<span class="cat-chip">'+esc(p.category)+'</span>':'')+'</div>':'')
+        +(p.photo?'<div class="ph"><img class="main" src="'+esc(rel(p.photo))+'" alt="'+esc(p.title)+'">'+(p.category?'<span class="cat-chip">'+esc(p.category)+'</span>':'')+(tracked(p)?'<span class="stk '+(soldOut(p)?'out':'in')+'">'+(soldOut(p)?'غير متوفر':'متوفر')+'</span>':'')+'</div>':'')
         +(g?'<div class="thumbs"><img src="'+esc(rel(p.photo))+'" alt="" onclick="this.closest(\'.card\').querySelector(\'.main\').src=this.src">'+g+'</div>':'')
-        +'<h3>'+esc(p.title)+'</h3>'+(tracked(p)?'<p><span class="stk '+(soldOut(p)?'out':'in')+'">'+(soldOut(p)?'غير متوفر':'متوفر')+'</span></p>':'')+'<p>'+esc(p.detail)+'</p>'
+        +'<h3>'+esc(p.title)+'</h3>'+'<p>'+esc(p.detail)+'</p>'
         +'<p class="price">'+fmt(p.price)+' <small>جنيه مصري</small></p>'
         +(soldOut(p)?'<span class="btn btn-off">نفد حاليًا</span>':'<a class="btn" href="'+wa(p)+'" target="_blank" rel="noopener">'+waSvg+'اطلب على واتساب</a>')+'</article>';
     }).join('');
