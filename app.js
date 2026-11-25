@@ -12,6 +12,11 @@ fetch('products.json').then(r=>r.json()).then(d=>{
   const rel=u=>String(u||'').replace(/^\//,'');
   const esc=t=>String(t==null?'':t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const waSvg='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.6-1.3.1-.2 0-.4 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.9.9-1.1 2.2-.2 3.9a11.6 11.6 0 0 0 4.5 4.2c1.7.8 2.4.9 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.1-.4-.2z"/></svg>';
+  const tracked=p=>p.stock!==undefined&&p.stock!==null&&p.stock!=='';
+  const soldOut=p=>tracked(p)&&Number(p.stock)<=0;
+  const st=document.createElement('style');
+  st.textContent='.stk{display:inline-block;padding:2px 10px;border-radius:999px;font-weight:700;font-size:13px}.stk.in{background:#e6f7ec;color:#157a3c}.stk.out{background:#fde8e8;color:#b42318}.btn-off{background:#d0d0d0!important;color:#666!important;cursor:not-allowed;pointer-events:none;text-align:center}.card:has(.stk.out) .ph img{opacity:.55}';
+  document.head.appendChild(st);
   function draw(){
     cEl.innerHTML='';
     cats.forEach(c=>{
@@ -26,9 +31,9 @@ fetch('products.json').then(r=>r.json()).then(d=>{
       return '<article class="card">'
         +(p.photo?'<div class="ph"><img class="main" src="'+esc(rel(p.photo))+'" alt="'+esc(p.title)+'">'+(p.category?'<span class="cat-chip">'+esc(p.category)+'</span>':'')+'</div>':'')
         +(g?'<div class="thumbs"><img src="'+esc(rel(p.photo))+'" alt="" onclick="this.closest(\'.card\').querySelector(\'.main\').src=this.src">'+g+'</div>':'')
-        +'<h3>'+esc(p.title)+'</h3><p>'+esc(p.detail)+'</p>'
+        +'<h3>'+esc(p.title)+'</h3>'+(tracked(p)?'<p><span class="stk '+(soldOut(p)?'out':'in')+'">'+(soldOut(p)?'نفد':'متوفر')+'</span></p>':'')+'<p>'+esc(p.detail)+'</p>'
         +'<p class="price">'+fmt(p.price)+' <small>جنيه مصري</small></p>'
-        +'<a class="btn" href="'+wa(p)+'" target="_blank" rel="noopener">'+waSvg+'اطلب على واتساب</a></article>';
+        +(soldOut(p)?'<span class="btn btn-off">نفد حاليًا</span>':'<a class="btn" href="'+wa(p)+'" target="_blank" rel="noopener">'+waSvg+'اطلب على واتساب</a>')+'</article>';
     }).join('');
   }
   draw();
