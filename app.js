@@ -15,7 +15,7 @@ fetch('products.json').then(r=>r.json()).then(d=>{
   const tracked=p=>p.stock!==undefined&&p.stock!==null&&p.stock!=='';
   const soldOut=p=>tracked(p)&&Number(p.stock)<=0;
   const st=document.createElement('style');
-  st.textContent='.stk{display:inline-block;padding:2px 10px;border-radius:999px;font-weight:700;font-size:13px}.stk.in{background:#e6f7ec;color:#157a3c}.stk.out{background:#fde8e8;color:#b42318}.card:has(.stk){position:relative}.card:has(.stk) .stk{position:absolute;top:12px;right:12px;z-index:2}.stk.out{font-size:0}.stk.out:after{content:"غير متوفر";font-size:13px}.btn-off{background:#d0d0d0!important;color:#666!important;cursor:not-allowed;pointer-events:none;text-align:center}.card:has(.stk.out) .ph img{opacity:.55}';
+  st.textContent='.stk{display:inline-block;padding:2px 10px;border-radius:999px;font-weight:700;font-size:13px}.stk.in{background:#e6f7ec;color:#157a3c}.stk.out{background:#fde8e8;color:#b42318}.card:has(.stk){position:relative}.card:has(.stk) .stk{position:absolute;top:26px;right:26px;z-index:3}.card:has(.stk) .cat-chip{left:26px;right:auto;z-index:2}.stk.out{font-size:0}.stk.out:after{content:"غير متوفر";font-size:13px}.btn-off{background:#d0d0d0!important;color:#666!important;cursor:not-allowed;pointer-events:none;text-align:center}.card:has(.stk.out) .ph img{opacity:.55}';
   document.head.appendChild(st);
   function draw(){
     cEl.innerHTML='';
