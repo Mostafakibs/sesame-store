@@ -14,8 +14,7 @@
       "title": "لعبة البطة",
       "detail": "اسأل المحل على واتساب عن التفاصيل والتوفر قبل تأكيد الطلب.",
       "price": 150,
-      "photo": "/photos/duck.jpg",
-      "stock": 0
+      "photo": "/photos/duck.jpg"
     },
     {
       "id": "bike",
@@ -28,8 +27,7 @@
         "/photos/bike-rear.jpg",
         "/photos/bike-basket.jpg",
         "/photos/bike-seat.jpg"
-      ],
-      "stock": 3
+      ]
     }
   ]
 }
