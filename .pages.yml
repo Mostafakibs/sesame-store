@@ -18,5 +18,6 @@ content:
           - { name: title, label: "Name", type: string }
           - { name: detail, label: "Description", type: text }
           - { name: price, label: "Price (EGP, numbers only)", type: number }
+          - { name: stock, label: "Stock quantity (add when goods arrive, reduce when you sell. 0 = shows Sold out. Leave empty = not tracked)", type: number }
           - { name: photo, label: "Main photo", type: image }
           - { name: gallery, label: "More photos", type: image, list: true }
