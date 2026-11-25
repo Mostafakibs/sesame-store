@@ -22,6 +22,7 @@
       "title": "عجله مرشيل",
       "detail": "مقاس 26، غيارات. اسأل المحل عن عدد الغيارات وباقي المواصفات والتوفر قبل تأكيد الطلب.",
       "price": 5600,
+      "stock": 100,
       "photo": "/photos/bike-lead.jpg",
       "gallery": [
         "/photos/bike-rear.jpg",
